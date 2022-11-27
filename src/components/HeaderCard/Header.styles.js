@@ -11,6 +11,8 @@ export default StyleSheet.create({
   title: {
     fontSize: 30,
     color: 'orange',
+
+    fontWeight: 'bold',
   },
   number: {
     fontSize: 30,
