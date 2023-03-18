@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import {
   View,
@@ -6,24 +6,41 @@ import {
   Stylesheet,
   TouchableOpacity,
   TextInput,
+  Keyboard,
 } from 'react-native';
-import {Header} from 'react-native/Libraries/NewAppScreen';
 
 import styles from './Bottom.styles';
 
-const Bottom = ({setNumber}) => {
+const Bottom = ({ text, setText, setTasks, setNumber }) => {
+
+  const handleChanges = (e) => {
+    setText(e);
+  };
+
+  const handleSubmit = () => {
+    setTasks((prev) => [...prev, text]);
+    Keyboard.dismiss();
+    setText("");
+
+    setNumber((counter) => counter + 1);
+
+  };
+
   return (
     <View style={styles.bottomContainer}>
       <TextInput
         style={styles.input}
         placeholder="Yapılacaklar..."
-        onChangeText={text => setText(text)}></TextInput>
+        value={text}
+        onChangeText={handleChanges}
+      >
+      </TextInput>
 
       <View style={styles.seperator}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => setNumber(p => p + 1)}>
-          <Text style={styles.buttonText}>KAYDET</Text>
+        >
+          <Text style={styles.buttonText} onPress={handleSubmit}>KAYDET</Text>
         </TouchableOpacity>
       </View>
     </View>

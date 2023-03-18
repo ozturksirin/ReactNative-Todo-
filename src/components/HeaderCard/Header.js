@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-import {View, Text, StyleSheet} from 'react-native';
-
-// import Bottom from '../BottomCard/Bottom';
+import { View, Text, StyleSheet } from 'react-native';
 
 import styles from './Header.styles';
 const Header = props => {

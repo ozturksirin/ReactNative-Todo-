@@ -1,22 +1,29 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import {View, Text, StyleSheet, TextInput, FlatList} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Body from './components/BodyCard/Body';
 import Header from './components/HeaderCard/Header';
 import Bottom from './components/BottomCard/Bottom';
 
-const App = () => {
+const App = (props) => {
   const [number, setNumber] = useState(0);
+  const [text, setText] = useState("");
+  const [tasks, setTasks] = useState([]);
+
   return (
+
     <View style={styles.container}>
-      <Header number={number}></Header>
+      <Header number={number} />
+      <Body tasks={tasks} />
 
-      <FlatList></FlatList>
+      <Bottom setNumber={setNumber}
+        text={text}
+        setText={setText}
+        tasks={tasks}
+        setTasks={setTasks}
+      />
 
-      <Body></Body>
-
-      <Bottom setNumber={setNumber}></Bottom>
     </View>
   );
 };

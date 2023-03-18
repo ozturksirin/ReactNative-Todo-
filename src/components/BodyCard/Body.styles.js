@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   listCard: {
@@ -6,8 +6,13 @@ export default StyleSheet.create({
     margin: 5,
     padding: 10,
     borderRadius: 10,
+
   },
   text: {
     color: 'white',
   },
+  opacity: {
+    flexDirection: 'row',
+  },
+
 });
